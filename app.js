@@ -32,11 +32,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function multiply(a,b){ //eslint-disable-line
-
+  var theProduct = a * b;
+  var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
+  return [theProduct, message];
 }
 
 // TODO: Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+ testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -54,10 +56,24 @@ Test this function by hand in the console to get it working, and when you think 
 // TODO: Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
 
+  var threeSum = sum(sum(a,b)[0],c)[0];
+  var sumMessage = a + ' and ' + b + ' and ' + c + ' sum to ' + threeSum + '.';
+
+  var threeProduct = multiply(multiply(a,b)[0],c)[0];
+  var productMessage = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + threeProduct + '.';
+
+if (sumMessage === '4 and 7 and 5 sum to 16.') {
+  console.log('YES');
+}
+if (productMessage === 'The product of 4 and 7 and 5 is 140.'){
+  console.log('yes');
+}
+  return [threeSum, threeProduct, sumMessage, productMessage];
+
 }
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
